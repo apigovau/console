@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <div th:replace="fragments/layout :: meta" />
+  <title>api.gov.au</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="/css/designsystem.min.css" />
+        <link rel="stylesheet" href="/css/custom.css" />
+</head>
+<body class="au-body au-grid">
+
+<div th:replace="fragments/layout :: header(landing = false, current = 'apis')"/>
+
+
+<main class="container">
+    <h1>API.GOV.AU configuration console</h1>
+   <div th:if="${has_boostrap_credentials}">
+       <p>Here's your admin key</p>
+       <p th:text="${admin_key}"></p>
+       <p>You should now remove the 'BootstrapCredentials' environment variable</p>
+   </div>
+</main>
+
+
+<div th:replace="fragments/layout :: footer"/>
+</body>
+</html>
